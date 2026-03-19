@@ -1,0 +1,7 @@
+streamlit
+groq
+pandas
+python-dotenv
+sqlalchemy
+psycopg2-binary
+pymysql
