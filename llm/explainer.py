@@ -53,17 +53,3 @@ PLAIN ENGLISH ANSWER:"""
     except Exception as e:
         return None, f"Error generating explanation: {str(e)}"
 
-
-if __name__ == "__main__":
-    sample_df = pd.DataFrame({
-        "product_name": ["Laptop Pro"],
-        "total_revenue": [450000.00]
-    })
-    sample_sql = "SELECT product_name, SUM(unit_price * quantity) as total_revenue FROM order_items JOIN products USING(product_id) GROUP BY product_name ORDER BY total_revenue DESC LIMIT 1"
-    question = "Which product generated the most revenue?"
-
-    answer, error = explain_results(question, sample_sql, sample_df)
-    if error:
-        print(f"Error: {error}")
-    else:
-        print(f"Answer: {answer}")
